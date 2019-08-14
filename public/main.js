@@ -10,10 +10,29 @@ const main = () => {
     })
     .then(city => {
       console.log(city)
-      document.querySelector('.city').textContent = city.main.temp
+      document.querySelector('.temp').textContent = city.main.temp
       document.querySelector('.humidity').textContent = city.main.humidity
-      document.querySelector('.wind').textContent = city.wind.speed
+      document.querySelector('.wind-speed').textContent = city.wind.speed
     })
 }
+//todo: add geolocation
+// const getLocation = () => {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(geoSuccess, geoError)
+//   } else {
+//     alert('Geolocation is not supported by this browser.')
+//   }
+// }
+
+// const geoSuccess = position => {
+//   let lat = position.coords.latitude
+//   let lng = position.coords.longitude
+//   alert('lat:' + lat + ' lng:' + lng)
+// }
+
+// const geoError = () => {
+//   alert('Geocoder failed.')
+// }
 
 document.querySelector('button').addEventListener('click', main)
+// document.addEventListener('DOMContentLoaded', getLocation)
